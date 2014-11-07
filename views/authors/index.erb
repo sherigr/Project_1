@@ -1,0 +1,16 @@
+
+<h1>Featured Bloggers</h1>
+
+<div class="main">
+	<p><a href="/authors/"/>Join the FFlogger community</a></p>
+	<% @authors.each do |author| %>
+		<section>
+			<a href="/authors/<%= author.id %>"><h2><%= author.name %></h2>
+			<img src="<%= artist.image_url %>"></a>
+			<h4><%= artist.posted_at %></h4>	
+		</section>
+	<% end %>	
+</div>
+
+
+
