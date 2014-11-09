@@ -1,5 +1,23 @@
-edit.erb
 
+
+
+
+
+
+<!-- 
 <,<h2>Edit Author Info</h2>
-<form action
+<form action="/author/<%= @author.id %>" method="POST">
 </form>
+
+<label for="authors">Authors<br> 
+	<select name="author[id]"
+</label>
+
+
+
+
+
+<form action="/authors/<%= @author.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+		<button>DELETE</button>
+	</form> -->

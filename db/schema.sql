@@ -7,7 +7,6 @@ CREATE TABLE authors (
 id SERIAL PRIMARY KEY,
 name VARCHAR (255),
 img_url text,
-posted_at timestamp
 );
 
 CREATE TABLE blogs (

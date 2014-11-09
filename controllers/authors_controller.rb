@@ -1,6 +1,6 @@
 
 
-# # AUTHORS
+# AUTHORS
 
 	# INDEX	
 	get '/authors' do
@@ -16,7 +16,7 @@ end
 
 #CREATE new author
 	post '/authors' do
-		@authors = Author.new(params[:author])
+		@author = Author.new(params[:author])
 		 if author.save
 		 	redirect ("/authors/#{author.id}")
 		 else
@@ -45,3 +45,15 @@ end
 		@author = Author.find(params[:id])
 			erb :'authors/edit'
 	end
+
+	
+#DESTROY
+delete '/authors/:id' do 
+	author = Author.find(params[:id])
+	if author.destroy 
+		redirect('/authors')
+	else
+		redirect("/authors/#{author.id}")
+	end
+end
+

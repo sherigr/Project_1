@@ -10,8 +10,10 @@ require_relative 'models/author.rb'
 require_relative 'models/blog.rb'
 require_relative 'models/tag.rb'
 
-#ADD R_R FOR CONTROLLERS
-
+require_relative 'controllers/home_controller'
+require_relative 'controllers/authors_controller'
+require_relative 'controllers/blogs_controller'
+require_relative 'controllers/tags_controller'
 
 
 

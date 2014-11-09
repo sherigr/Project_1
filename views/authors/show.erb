@@ -1,9 +1,15 @@
-show.erb
 
-<h1><%= @author.name %></h1>
-<p><img src="<%= @author.img_url %>" width =100 ></p>
+<p><a href="/author/new">Become a FFlogger</a>
+</p>  <% @authors.each do |author|  %>
+	<div class="author all">
+		<h1><%= author.name %></h1>
+			<p><img src="<%= @author.img_url %>" width =400 ></p>
 
-
+		<p>
+		 <a href="/authors/<%= author.id%>"></a>
+		</p>
+	</div>
+<% end %>
 
 
 

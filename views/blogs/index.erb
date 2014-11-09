@@ -1,0 +1,21 @@
+
+<h1>BLOGS</h1>
+<p><a href="/blogs/news">Have a blog to add?</a></p> <% @blogs.each do |blog| %>
+
+	<div class="single blog">
+		<h2><%= blog.id %> | <%= blog.title %></h2>
+		<p><%= blog.posted_at%></p>
+		<p>blog.contents %></p>
+
+	</div>	
+
+<%  end  %>
+
+
+<!-- 
+# 		CREATE TABLE blogs (
+# id SERIAL PRIMARY KEY,
+# posted_at timestamp,
+# contents VARCHAR(255),
+# title VARCHAR(255),
+# author_id INTEGER  -->
