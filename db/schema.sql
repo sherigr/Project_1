@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS blogs_tags CASCADE;
 CREATE TABLE authors (
 id SERIAL PRIMARY KEY,
 name VARCHAR (255),
-img_url text,
+img_url VARCHAR(255),
 );
 
 CREATE TABLE blogs (

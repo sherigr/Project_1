@@ -1,6 +1,6 @@
 
 #HOME
 
-get '/' do 
-	erb :'home/home'
-end
+# get '/' do 
+# 	erb :'home/home'
+# end

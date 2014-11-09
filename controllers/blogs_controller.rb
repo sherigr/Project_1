@@ -1,6 +1,15 @@
 
+
+#INDEX
+get '/' do
+  @blogs = Blog.all
+  erb :'blogs/index'
+end
+
+
+
 #Create
-post '/blogs' do
+post '/blogs/create' do
 	blog = Blog.new(params[:blog])
 	if blog.save
 		redirect("/blogs/#{blog.id}")
@@ -9,16 +18,28 @@ post '/blogs' do
 	end
 end
 
+
 #EDIT
 get '/blogs/:id/edit' do
 	@blog = Blog.find(params[:id])
 	erb :'blogs/edit'
 end
 
+
+#EDIT
+post '/blogs/:id' do
+     blogs = Blog.find(params[:id])
+     blog.title = params[:title]
+     blog.contents = params[:contents]
+    redirect("blogs/#{blog.id}")
+    end
+
+
 #SHOW
-get '/blogs/:id' do 
-	@blog = Blog.find(params[:id])
-	erb :'blogs/show'
+ get '/blogs/:id' do
+     @blog = Blog.find(params[:id]) 
+     erb :"blogs/show"    
+     end
 
 	#DESTROY
 	delete '/blogs/:id' do 
@@ -29,4 +50,4 @@ get '/blogs/:id' do
 			redirect("/blogs/#{blog.id}")
 		end
 	end
-end
+

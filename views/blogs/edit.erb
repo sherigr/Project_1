@@ -1,1 +1,21 @@
-edit.erb
+
+<h3>Select A Blog</h3>
+
+<form action="/blogs/<%= @blog.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="title">Title<br>
+		<input type="text" name="title" value="<%= @blog.title %>">
+	</label><br>
+
+        <label for="contents">Content<br>
+            <input type="textfield" name="content" value="<%= @blog.contents %>">
+	</label><br>
+
+	<input type="submit" name="submit">
+</form>
+
+<form action="/blogs/<%= @blog.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+</form>
