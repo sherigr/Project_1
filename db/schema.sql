@@ -6,13 +6,13 @@ DROP TABLE IF EXISTS blogs_tags CASCADE;
 CREATE TABLE authors (
 id SERIAL PRIMARY KEY,
 name VARCHAR (255),
-img_url VARCHAR(255),
+avatar VARCHAR(255),
 );
 
 CREATE TABLE blogs (
 id SERIAL PRIMARY KEY,
 posted_at timestamp,
-contents VARCHAR(255),
+contents text,
 title VARCHAR(255),
 author_id INTEGER 
 );

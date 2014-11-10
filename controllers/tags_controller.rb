@@ -2,24 +2,33 @@
 # NEW form
 
 get '/tags/new' do 
-	@tags = Tags.all
 	erb :'/tags/new'
 end
 
+
 #EDIT
 get '/tags/:id/edit' do 
-	@tags = Tags.find(params[:id])
+	@tag = Tag.find(params[:id])
+	@blogs = Blog.all
+	erb :'tags/edit'
 end
 
 #CREATE
-post'/tags' do 
-	tags = Tags.new(params[:id])
-	if tags.save
+post'/tags/' do 
+	tag = Tag.new(params[:id])
+	if tag.save
 		redirect("/tags/#{tag.id}")
 	else
-		redirect("/tags/new")
+		erb :'tags/new'
 	end
 end
+
+#SHOW
+get '/tags/:id' do 
+	@tag = Tag.find(params[:id])
+	erb :'tags/show'
+end
+
 
 #UPDATE
 put '/tags/:id' do 

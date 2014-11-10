@@ -3,18 +3,30 @@
 #INDEX
 get '/' do
   @blogs = Blog.all
-  erb :'blogs/index'
+   @authors = Author.all
+  erb :"blogs/index"
 end
 
+get '/blogs' do
+  @blogs = Blog.all
+  erb :"blogs/index"
+end
+
+#NEW
+get '/blogs/new' do 
+	@blog = Blog.new
+	  @authors = Author.all
+	erb :"blogs/new"
+end 
 
 
 #Create
-post '/blogs/create' do
-	blog = Blog.new(params[:blog])
-	if blog.save
+post '/blogs/' do
+	@blog = Blog.new(params[:blog])
+	if @blog.save
 		redirect("/blogs/#{blog.id}")
 	else
-		redirect("/blogs/new")
+		erb :"blogs/new"
 	end
 end
 

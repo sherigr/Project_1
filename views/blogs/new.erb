@@ -1,1 +1,13 @@
-new.erb
+<form class="blog blog-new" action="/blogs" method="POST">
+	<label for="blog[title]">Title</label>
+    <input type="text" name="blog[title]" value="<%= @blog.title %>">
+    <label for="blog[content]">Content</label>
+    <input type="text" name="blog[contents]" value="<%= @blog.contents %>">
+    <select name="blog[author_id]">
+        <% @authors.each do |author| %>
+		<option value="<%= author.id %>"><%= author.name %></option>
+		<% end %>
+      </select>
+      <input type="submit" name="submit">
+    </form>
+    

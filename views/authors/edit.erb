@@ -1,5 +1,9 @@
 
-
+<form class="author edit" action="/authors" method="POST">
+      <input type="text" name="author[name]" value="<%= @author.name %>">
+      <input type="text" name="author[avatar]" value="<%= @author.avatar %>">
+      <input type="submit" name="submit">
+    </form>
 
 
 

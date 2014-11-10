@@ -3,14 +3,23 @@
 </h1>
 
 
+<a href="/blogs/new">Create a new blog!</a>
+<% @blogs.each do |blog| %>
+  <div class="blog">
+  	<h1><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h1>
+  	  <p><%= blog.contents %></p>
+  </div>
+<% end %>
 
-	<% @blogs.each do |x| %>
+
+<!-- 
+	<%# @blogs.each do |x| %>
   	<div>
-      <h1><%= x.title   %> </h1>
-   	  <p> <%= x.contents %></p>
-	<%end%>
+      <h1><%#= x.title   %> </h1>
+   	  <p> <%#= x.contents %></p>
+	<%#end%>
 </div>
 
-
+<%#
 
 

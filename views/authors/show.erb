@@ -1,5 +1,18 @@
 
 
+<div class="author author-single">
+      <h1><%= @author.name %></h1>
+      <img src="<%= @author.avatar %>">
+    </div>
+        
+    <% @author.blogs.each do |blog| %>
+	  <div class="blog">
+  		<h1><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h1>
+      </div>
+	<% end %>
+
+	
+
 <!-- SEE IF INLINE W/PROJECT
 
 <p><a href="/author/new">Become a FFlogger</a>

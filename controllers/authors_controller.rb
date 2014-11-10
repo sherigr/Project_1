@@ -10,19 +10,19 @@
 
 # NEW form
 get '/authors/new' do
-	@authors = Author.all 
-	erb :'/authors/new'
+	@author = Author.new  
+	erb :'authors/new'
 end
 
 #CREATE new author
-	post '/authors' do
-		@author = Author.new(params[:author])
-		 if author.save
-		 	redirect ("/authors/#{author.id}")
-		 else
-		 	redirect ("/authors/new")
-		end
-	end
+post '/authors' do
+  @author = Author.new(params[:author])
+  if @author.save
+    redirect "/authors/#{@author.id}"
+  else
+    erb :"authors/new"
+  end
+end
 	
 # UPDATE
 put '/authors/:id' do
@@ -30,7 +30,7 @@ put '/authors/:id' do
 	if author.update(params[:author])
 		redirect("/authors/#{author.id}") 
 	else
-		redirect("/authors/#{author.id}/edit")
+		  erb :"author/edit"
 	end
 end
 
@@ -41,7 +41,7 @@ end
 	end
 
 #EDIT
-	get '/authors/::id/edit' do
+	get '/authors/:id/edit' do
 		@author = Author.find(params[:id])
 			erb :'authors/edit'
 	end

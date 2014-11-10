@@ -1,13 +1,10 @@
 
 <p><a href="/authors/"/>Featured Bloggers</a></p>
-	<% @authors.each do |author| %>
 
-<div class="author all">
-	<h1><%= author.name %></h1>
-		<div>
-			<img src="<%= author.img_url %>" width=400>
-		</div>	
-	</div>
+
+<% @authors.each do |author| %>
+<h2><a href="/authors/<%= author.id %>"><%= author.name %></a></h2>
+<img src="<%= author.avatar %>">
 <% end %>
 
 		

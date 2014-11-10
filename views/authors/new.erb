@@ -1,5 +1,16 @@
 <h3>Become A FFloger!</h3>
 
+ <form class="author author-new" action="/authors" method="POST">
+      <input type="text" name="author[name]" value="<%= @author.name %>">
+      <input type="text" name="author[avatar]" value="<%= @author.avatar %>">
+      <input type="submit" name="submit">
+    </form>
+
+
+
+
+
+<!-- 
 <form action="/authors" method="POST">
 	<label for="name">Name<br>
 		<input type="text" name="author[name]">
@@ -15,3 +26,4 @@
 
 
 
+ -->
