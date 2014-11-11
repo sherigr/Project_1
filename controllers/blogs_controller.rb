@@ -19,8 +19,20 @@ get '/blogs/new' do
 	erb :"blogs/new"
 end 
 
+# #Create
+# post '/blogs' do 
+# 	blog = Blog.new(params[:blog])
+# 	if blog.save
+# 		redirect("/blogs/#{blog.id}")
+# 	else
+# 		redirect("/blogs/new")
+# 	end
+# end
 
-#Create
+
+
+
+# Create
 post '/blogs/' do
 	@blog = Blog.new(params[:blog])
 	if @blog.save

@@ -27,17 +27,28 @@ author_data = get_author_data()
 blog_data = get_blog_data()
 tag_data = get_tag_data()
 
+7.times do 
+    Blog.create( title: "#{Faker::Name.name}",
+     contents: "#{Faker::Lorem.paragraph(3)}",
+    	posted_at: "#{Faker::Date.today}"),
+		avatar: "#{Faker::imageUrl(300, 200. 'football')}"
+		end
+
+		
+
+
+
+#--------------------------------------
 # 7.times do 
 # 	Author.create(
 # 		name: "#{Faker::Name.first_name}",
 # 		img_url: "#{Faker}"
 # 		)
 # end
-
-   
-3.times do 
-    Blog.create( title: "#{Faker::Name.name}",
-     contents: "#{Faker::Lorem.paragraph(3)}",
-    	posted_at: "#{Date.today}")
-end
-
+	
+#------------------------------------------
+# 3.times do 
+#     Blog.create( title: "#{Faker::Name.name}",
+#      contents: "#{Faker::Lorem.paragraph(3)}",
+#     	posted_at: "#{Date.today}")
+# end

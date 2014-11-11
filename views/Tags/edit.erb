@@ -1,0 +1,19 @@
+edit.erb
+
+<h3>Choose A Tag!</h3>
+
+<form action="/tags/<%= @tag.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="tag">Tag<br>
+		<input type="text" name="category" value="<%= @tag.category %>">
+	</label><br>
+
+
+	<input type="submit" name="submit">
+</form>
+
+<form action="/tags/<%= @tag.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+</form>

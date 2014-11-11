@@ -1,8 +1,28 @@
+<h3>Add A Blog!</h3>
+
+<form class="blog blog-new" action="/blogs" method="POST">
+  <label for="title">Title<br>
+    <input type="text" name="blog[name]"><br> </label>
+    <label for="content">Content<br>
+      <input type="text" name="blog[content]"></br></label>
+      <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
+
+
+
+
+<!--was using this
 <form class="blog blog-new" action="/blogs" method="POST">
 	<label for="blog[title]">Title</label>
     <input type="text" name="blog[title]" value="<%= @blog.title %>">
+
     <label for="blog[content]">Content</label>
-    <input type="text" name="blog[contents]" value="<%= @blog.contents %>">
+    <input type="text" name="blog[content]" value="<%= @blog.contents %>">
     <select name="blog[author_id]">
         <% @authors.each do |author| %>
 		<option value="<%= author.id %>"><%= author.name %></option>
@@ -10,4 +30,4 @@
       </select>
       <input type="submit" name="submit">
     </form>
-    
+    -->

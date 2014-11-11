@@ -1,0 +1,19 @@
+
+
+<a href="/blogs/new">Create a Tag Category!</a>
+<% @tags.each do |tag| %>
+  <div class="tag">
+  	<h1><a href="/tag/<%= tag.id %>"><%= tag.category %></a></h1>
+  </div>
+<% end %>
+
+
+<!--
+	<a href="/tags/new">Add a Tag</a>
+<% @tags.each #do |tag| %>
+<h3>
+	<%= tag.category %>
+	<a href="/tags/<%= tag.id %>">View</a>
+</h3>
+<% #end %>
+-->	
