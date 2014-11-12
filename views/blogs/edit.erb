@@ -9,8 +9,13 @@
 	</label><br>
 
         <label for="contents">Content<br>
-            <input type="textfield" name="content" value="<%= @blog.contents %>">
+            <input type="text" name="content" value="<%= @blog.contents %>">
 	</label><br>
+
+	<label for="author">Author<br>
+		<input type="text" name="author" value="<%= @blog.author %>">
+	</label><br>
+
 
 	<input type="submit" name="submit">
 </form>

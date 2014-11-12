@@ -18,9 +18,9 @@ end
 post '/authors' do
   @author = Author.new(params[:author])
   if @author.save
-    redirect "/authors/#{@author.id}"
+    redirect "/authors/#{author.id}"
   else
-    erb :"authors/new"
+    erb :'authors/new'  
   end
 end
 	
@@ -30,14 +30,14 @@ put '/authors/:id' do
 	if author.update(params[:author])
 		redirect("/authors/#{author.id}") 
 	else
-		  erb :"author/edit"
+		  redirect("/authors/#{author.id}/edit")
 	end
 end
 
 #SHOW
 	get '/authors/:id' do
 		@author = Author.find(params[:id])
-			erb :'author/show'
+			erb :'authors/show'
 	end
 
 #EDIT

@@ -1,22 +1,39 @@
 
+<div class="author author-single">
+<h1><%= @author.name %></h1>
+<p><%= @@author.avatar %>>" width=300 %>></p>
 
+<form action="/authors/<%=author.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+
+	<% @author.blogs.each do |blog| %>
+	<div class="single blog">
+		<h2><%= blog.title %></h2>
+		<h2>blog.content %></h2>
+		<a href="/blogs/<%= blog.id %>"></a>
+	</div>
+	<% end %>
+
+
+<!-- Was Using THis
 <div class="author author-single">
       <h1><%= @author.name %></h1>
       <img src="<%= @author.avatar %>">
     </div>
         
-    <% @author.blogs.each do |blog| %>
+    <% @author.blogs.each #do |blog| %>
 	  <div class="blog">
   		<h1><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h1>
       </div>
-	<% end %>
+	<% #end %>
 
-	
+	 -->
 
 <!-- SEE IF INLINE W/PROJECT
 
 <p><a href="/author/new">Become a FFlogger</a>
-</p>  <% @authors.each do |author|  %>
+</p>  <% @authors.each #do |author|  %>
 	<div class="author all">
 		<h1><%= author.name %></h1>
 			<p><img src="<%= @author.img_url %>" width =400 ></p>
@@ -25,7 +42,7 @@
 		 <a href="/authors/<%= author.id%>"></a>
 		</p>
 	</div>
-<% end %>
+<% #end %>
 
 -->
 

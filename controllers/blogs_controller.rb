@@ -29,9 +29,6 @@ end
 # 	end
 # end
 
-
-
-
 # Create
 post '/blogs/' do
 	@blog = Blog.new(params[:blog])
@@ -57,6 +54,17 @@ post '/blogs/:id' do
      blog.contents = params[:contents]
     redirect("blogs/#{blog.id}")
     end
+
+ #UPDATE
+ put '/blogs/:id' do 
+ 	blog = Blog.find(params[:id])
+ 	if blog.update(params[:blog])
+ 		redirect("/blogs/{blog.id}")
+ 	else
+ 		redirect("/blogs/#{blog.id}/edit")
+ 	end
+ end
+
 
 
 #SHOW

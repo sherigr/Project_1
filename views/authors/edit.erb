@@ -1,9 +1,16 @@
 
-<form class="author edit" action="/authors" method="POST">
+<form class="author edit" action="/authors/<%=auhtor.id %>" method="POST">
       <input type="text" name="author[name]" value="<%= @author.name %>">
       <input type="text" name="author[avatar]" value="<%= @author.avatar %>">
       <input type="submit" name="submit">
     </form>
+
+    <label for="author">Author<br>
+    	<select name="author[author_id]">
+    		<% @author.each do |author| %>
+    		<option <%= "selected" if author == @blog.author %> value="author.id %>"><%= author.name %></option>
+    		<% end %>
+    	</select>
 
 
 
